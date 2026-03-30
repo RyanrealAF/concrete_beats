@@ -225,6 +225,8 @@ function Scene({ scene, index }: { scene: (typeof scenes)[number]; index: number
 }
 
 export default function App() {
+  const { scrollYProgress } = useScroll();
+  
   return (
     <main className="bg-black relative">
       <div className="grain" />
@@ -233,7 +235,7 @@ export default function App() {
         <motion.div
           className="h-full bg-[#FF6321] origin-left"
           style={{
-            scaleX: useScroll().scrollYProgress,
+            scaleX: scrollYProgress,
           }}
         />
       </div>
