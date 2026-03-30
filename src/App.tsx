@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
-import { useRef, useState } from "react";
-import { Truck, Waves, Trash2, Sun, Moon, Package, Heart, MapPin, Camera, Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
+import { Truck, Waves, Trash2, Sun, Moon, Package, Heart, MapPin, Camera } from "lucide-react";
 
 const scenes = [
   {
@@ -249,40 +249,10 @@ function Scene({ scene, index }: { scene: (typeof scenes)[number]; index: number
 
 export default function App() {
   const { scrollYProgress } = useScroll();
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
-
-  const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play().catch(e => console.error("Audio playback failed:", e));
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const toggleMute = () => {
-    if (audioRef.current) {
-      audioRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
   
   return (
     <main className="bg-black relative">
       <div className="grain" />
-      
-      {/* Audio Element */}
-      <audio 
-        ref={audioRef} 
-        src="/audio/concrete-beats-clever.mp3" 
-        loop 
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
-      />
       
       <div className="fixed top-0 left-0 w-full h-2 z-50 bg-black">
         <motion.div
@@ -302,36 +272,6 @@ export default function App() {
             A PURARECOVERY PRODUCTION
           </div>
         </div>
-
-        {/* Audio Controls */}
-        <div className="flex items-center gap-4 bg-white/10 backdrop-blur-md p-2 px-4 rounded-full border border-white/20">
-          <div className="flex flex-col items-end mr-2">
-            <div className="font-mono text-[8px] uppercase opacity-60 tracking-widest">Now Playing</div>
-            <div className="font-tag text-xs text-[#FF6321] whitespace-nowrap overflow-hidden w-24">
-              <motion.div
-                animate={{ x: [-100, 100] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-              >
-                CONCRETE BEATS CLEVER
-              </motion.div>
-            </div>
-          </div>
-          <button 
-            onClick={togglePlay}
-            className="p-2 hover:bg-white/20 rounded-full transition-colors"
-            title={isPlaying ? "Pause" : "Play"}
-          >
-            {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-current" />}
-          </button>
-          <button 
-            onClick={toggleMute}
-            className="p-2 hover:bg-white/20 rounded-full transition-colors"
-            title={isMuted ? "Unmute" : "Mute"}
-          >
-            {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-          </button>
-        </div>
-
         <div className="flex flex-col items-end">
           <div className="flex items-center gap-2 font-tag text-lg text-[#FF6321]">
             <MapPin className="w-4 h-4" />
@@ -342,34 +282,6 @@ export default function App() {
           </div>
         </div>
       </header>
-
-      {/* Visualizer (Bottom Right) */}
-      <AnimatePresence>
-        {isPlaying && (
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-8 right-8 z-40 flex items-end gap-1 h-12 mix-blend-difference"
-          >
-            {[...Array(8)].map((_, i) => (
-              <motion.div
-                key={i}
-                animate={{ 
-                  height: [10, 40, 15, 48, 20],
-                }}
-                transition={{ 
-                  duration: 0.5 + Math.random() * 0.5, 
-                  repeat: Infinity, 
-                  ease: "easeInOut",
-                  delay: i * 0.1
-                }}
-                className="w-1 bg-[#FF6321]"
-              />
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {scenes.map((scene, index) => (
         <div key={scene.id}>
