@@ -21,9 +21,37 @@ const scenes = [
     textColor: "text-[#1a1a1a]",
     accent: "border-[#1a1a1a]",
     graffiti: "RYANREALAF",
-    image: "https://picsum.photos/seed/alley-urban-gta/1200/800",
-    character: "https://picsum.photos/seed/woman-khakis/600/800",
     tag: "SHARP EDGES",
+  },
+  {
+    id: "pre-chorus-1",
+    title: "PRE-CHORUS: THE WEIGHT",
+    mission: "MISSION: GRAVITY CHECK",
+    time: "01:15 PM",
+    icon: <Package className="w-6 h-6" />,
+    text: "Everything we own is just a collection of things we haven't thrown away yet. Boxes stacked like a game of Tetris where the prize is just more heavy lifting.",
+    subtext: "The sweat started to bead on her upper lip, but she didn't wipe it. She just kept pushing. I realized then that she wasn't just moving boxes; she was moving a whole life out of the way.",
+    commentary: "The physical weight of the objects mirrors the emotional weight of the transition. Every box is a memory boxed up.",
+    bg: "bg-[#b8a98f]",
+    textColor: "text-black",
+    accent: "border-black",
+    graffiti: "HEAVY LIFTING",
+    tag: "GRAVITY",
+  },
+  {
+    id: "chorus-1",
+    title: "CHORUS: THE PRODUCTION",
+    mission: "MISSION: NEGOTIATE PHYSICS",
+    time: "02:00 PM",
+    icon: <Truck className="w-6 h-6" />,
+    text: "The SUV was one decent pothole away from coughing up a chair leg and a nervous breakdown. Every time she saw another pile, she lit up. Jumped out. Started digging.",
+    subtext: "She needed her hands full. Needed the little jolt of finding, grabbing, deciding, fitting. Talking shit to broken furniture like it owed her respect. I let the circus breathe.",
+    commentary: "The Cherokee is the heart of the song. It's the vessel for the chaos. If it holds, we win. If it breaks, we're just two people with a broken chair.",
+    bg: "bg-[#2a2b2e]",
+    textColor: "text-white",
+    accent: "border-white/30",
+    graffiti: "STREET GRIT",
+    tag: "FULL HOUSE",
   },
   {
     id: "verse2",
@@ -38,26 +66,22 @@ const scenes = [
     textColor: "text-black",
     accent: "border-black/40",
     graffiti: "CONCRETE GOSPEL",
-    image: "https://picsum.photos/seed/scavenge-gta/1200/800",
-    character: "https://picsum.photos/seed/man-hoodie/600/800",
     tag: "LIFE SCRAPS",
   },
   {
-    id: "chorus",
-    title: "CHORUS: THE PRODUCTION",
-    mission: "MISSION: NEGOTIATE PHYSICS",
+    id: "chorus-2",
+    title: "CHORUS: THE PRODUCTION (REPRISE)",
+    mission: "MISSION: SUSTAINED CHAOS",
     time: "04:15 PM",
     icon: <Truck className="w-6 h-6" />,
-    text: "The SUV was one decent pothole away from coughing up a chair leg and a nervous breakdown. Every time she saw another pile, she lit up. Jumped out. Started digging.",
-    subtext: "She needed her hands full. Needed the little jolt of finding, grabbing, deciding, fitting. Talking shit to broken furniture like it owed her respect. I let the circus breathe.",
-    commentary: "The Cherokee is the heart of the song. It's the vessel for the chaos. If it holds, we win. If it breaks, we're just two people with a broken chair.",
-    bg: "bg-[#2a2b2e]",
-    textColor: "text-white",
-    accent: "border-white/30",
-    graffiti: "STREET GRIT",
-    image: "https://picsum.photos/seed/suv-packed-gta/1200/800",
-    character: "https://picsum.photos/seed/woman-active/600/800",
-    tag: "FULL HOUSE",
+    text: "The roof rack was groaning now. Straps humming in the wind like a bass line. We were a rolling monument to 'maybe this will work.'",
+    subtext: "She was laughing now, covered in dust and grease, looking at a cracked mirror like it was the Hope Diamond. I started to see what she saw: not junk, but a kit for a new world.",
+    commentary: "The repetition of the chorus shows the building momentum. The chaos isn't scary anymore; it's the rhythm.",
+    bg: "bg-[#1a1a1a]",
+    textColor: "text-[#FF6321]",
+    accent: "border-[#FF6321]",
+    graffiti: "KIT FOR A NEW WORLD",
+    tag: "MOMENTUM",
   },
   {
     id: "verse3",
@@ -73,9 +97,22 @@ const scenes = [
     accent: "border-[#ff4e00]/40",
     special: "atmosphere",
     graffiti: "UNBOTHERED",
-    image: "https://picsum.photos/seed/pool-night-gta/1200/800",
-    character: "https://picsum.photos/seed/woman-dress/600/800",
     tag: "FLUENT IN TROUBLE",
+  },
+  {
+    id: "verse4",
+    title: "VERSE IV: THE DRIVE",
+    mission: "MISSION: NAVIGATION",
+    time: "12:30 AM",
+    icon: <Moon className="w-6 h-6" />,
+    text: "The city lights blurred into long streaks of neon and regret. We drove through the parts of town where the streetlights are just suggestions and the shadows have teeth.",
+    subtext: "She had her feet on the dash, humming something I didn't recognize. The SUV felt like a fortress. Outside, the world was loud and hungry. Inside, it was just us and a trunk full of potential.",
+    commentary: "The drive is the transition. The city is the audience, but they're not invited to the show.",
+    bg: "bg-[#0a0a0a]",
+    textColor: "text-white",
+    accent: "border-white/10",
+    graffiti: "FORTRESS ON WHEELS",
+    tag: "NEON REGRET",
   },
   {
     id: "bridge",
@@ -90,9 +127,22 @@ const scenes = [
     textColor: "text-white",
     accent: "border-white/20",
     graffiti: "DUMPSTER DIVING",
-    image: "https://picsum.photos/seed/alley-night-gta/1200/800",
-    character: "https://picsum.photos/seed/woman-bending/600/800",
     tag: "CINEMATIC BROKE",
+  },
+  {
+    id: "chorus-final",
+    title: "CHORUS: THE PRODUCTION (FINALE)",
+    mission: "MISSION: ARRIVAL",
+    time: "03:30 AM",
+    icon: <Truck className="w-6 h-6" />,
+    text: "We finally parked. The SUV let out a long, metallic sigh. We were surrounded by the spoils of the day: the broken, the found, the stolen, and the saved.",
+    subtext: "She leaned against the hood, looking at the pile like a conqueror. The production was over, but the story was just starting to get good. We were tired, dirty, and exactly where we needed to be.",
+    commentary: "The final chorus is the exhale. The mission is accomplished, but the gospel is just beginning.",
+    bg: "bg-[#111]",
+    textColor: "text-[#FF6321]",
+    accent: "border-[#FF6321]",
+    graffiti: "THE EXHALE",
+    tag: "CONQUEROR",
   },
   {
     id: "outro",
@@ -107,8 +157,6 @@ const scenes = [
     textColor: "text-[#1a1a1a]",
     accent: "border-[#1a1a1a]/30",
     graffiti: "GRIT & GRACE",
-    image: "https://picsum.photos/seed/urban-dawn-gta/1200/800",
-    character: "https://picsum.photos/seed/couple-urban/600/800",
     tag: "CONCRETE GOSPEL",
   },
 ];
@@ -123,7 +171,6 @@ function Scene({ scene, index }: { scene: (typeof scenes)[number]; index: number
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.95, 1, 1, 0.95]);
   const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [50, 0, 0, -50]);
-  const charX = useTransform(scrollYProgress, [0, 1], [20, -20]);
   const muralY = useTransform(scrollYProgress, [0, 1], [-10, 10]);
 
   return (
@@ -133,28 +180,22 @@ function Scene({ scene, index }: { scene: (typeof scenes)[number]; index: number
     >
       <div className="absolute inset-0 vignette z-10 pointer-events-none" />
 
-      {/* Mural Background Layer */}
+      {/* Mural Background Layer (No Image, just color/texture) */}
       <motion.div 
         style={{ y: muralY }}
-        className="absolute inset-0 z-0 opacity-40"
+        className="absolute inset-0 z-0 opacity-20"
       >
-        <img 
-          src={scene.image} 
-          alt="" 
-          className="w-full h-full object-cover gta-style"
-          referrerPolicy="no-referrer"
-        />
         <div className={`absolute inset-0 ${scene.bg} opacity-40 mix-blend-multiply`} />
       </motion.div>
 
       <motion.div
         style={{ opacity, scale, y }}
-        className="max-w-6xl w-full relative z-20 grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
+        className="max-w-4xl w-full relative z-20 flex flex-col items-center text-center"
       >
         {/* Text Content */}
-        <div className="md:col-span-7 flex flex-col">
-          <div className="mb-6">
-            <div className="flex items-center gap-3 mb-2">
+        <div className="flex flex-col items-center w-full">
+          <div className="mb-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
               <span className="bg-black text-white px-3 py-1 font-mono text-[10px] tracking-tighter uppercase">
                 {scene.mission}
               </span>
@@ -162,28 +203,28 @@ function Scene({ scene, index }: { scene: (typeof scenes)[number]; index: number
                 {scene.time}
               </span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-display leading-none tracking-tighter text-shadow-mural mb-2">
+            <h2 className="text-6xl md:text-9xl font-display leading-none tracking-tighter text-shadow-mural mb-4">
               {scene.title}
             </h2>
-            <div className="font-tag text-[#FF6321] text-2xl rotate-[-3deg] ml-4 graffiti-glow">
+            <div className="font-tag text-[#FF6321] text-3xl rotate-[-2deg] graffiti-glow">
               #{scene.tag}
             </div>
           </div>
 
-          <div className="relative group">
+          <div className="relative w-full">
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 0.15, scale: 1 }}
-              className="absolute -top-16 -left-8 text-8xl md:text-[12rem] font-graffiti pointer-events-none select-none whitespace-nowrap text-[#FF6321] opacity-10"
+              whileInView={{ opacity: 0.1, scale: 1 }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] md:text-[25rem] font-graffiti pointer-events-none select-none whitespace-nowrap text-[#FF6321] opacity-5"
             >
               {scene.graffiti}
             </motion.div>
             
-            <div className="bg-white/5 backdrop-blur-md p-8 comic-border relative z-10">
-              <p className="text-xl md:text-3xl font-bold leading-tight mb-6 uppercase italic">
+            <div className="bg-white/5 backdrop-blur-sm p-10 md:p-16 comic-border relative z-10 w-full">
+              <p className="text-2xl md:text-5xl font-bold leading-tight mb-8 uppercase italic tracking-tight">
                 {scene.text}
               </p>
-              <p className="text-lg md:text-xl opacity-80 font-serif italic leading-relaxed border-t border-current/20 pt-4">
+              <p className="text-xl md:text-2xl opacity-80 font-serif italic leading-relaxed border-t border-current/20 pt-8 max-w-2xl mx-auto">
                 {scene.subtext}
               </p>
               
@@ -191,34 +232,16 @@ function Scene({ scene, index }: { scene: (typeof scenes)[number]; index: number
               <motion.div 
                 initial={{ opacity: 0, rotate: -5 }}
                 whileInView={{ opacity: 1, rotate: -2 }}
-                className="absolute -bottom-12 -right-4 md:-right-12 bg-yellow-100/90 p-4 shadow-xl max-w-[200px] comic-border transform -rotate-2 hidden md:block"
+                className="absolute -bottom-12 right-0 md:-right-8 bg-yellow-100/90 p-6 shadow-2xl max-w-[250px] comic-border transform -rotate-2 hidden md:block"
               >
                 <span className="text-[10px] font-mono uppercase block mb-1 opacity-50 text-black">Liner Notes:</span>
-                <p className="font-tag text-xs text-black leading-tight">
+                <p className="font-tag text-sm text-black leading-tight">
                   {scene.commentary}
                 </p>
               </motion.div>
             </div>
           </div>
         </div>
-
-        {/* Character Portrait */}
-        <motion.div 
-          style={{ x: charX }}
-          className="md:col-span-5 relative hidden md:block"
-        >
-          <div className="comic-border overflow-hidden rotate-[2deg] bg-black">
-            <img 
-              src={scene.character} 
-              alt="Character" 
-              className="w-full h-auto gta-style grayscale-[0.2] contrast-[1.1] saturate-[1.2]"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="absolute -bottom-4 -right-4 bg-[#FF6321] text-black px-4 py-2 font-display text-xl rotate-[-5deg] comic-border">
-            {scene.graffiti}
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   );
