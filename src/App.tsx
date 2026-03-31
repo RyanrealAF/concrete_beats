@@ -223,7 +223,10 @@ export default function App() {
   }, []);
 
   return (
-    <main className="bg-black relative">
+    <main className="bg-black relative min-h-screen">
+      <div className="fixed top-4 left-4 z-[9999] bg-red-600 text-white px-2 py-1 text-xs font-mono">
+        DEBUG: APP RENDERED
+      </div>
       <div className="grain" />
       {scenes.map((scene) => (
         <div key={scene.id} className={`sticky top-0 ${scene.bg}`}>
