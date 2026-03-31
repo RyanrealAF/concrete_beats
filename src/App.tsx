@@ -175,7 +175,7 @@ function Scene({ scene }: { scene: (typeof scenes)[number] }) {
   return (
     <section
       ref={ref}
-      className={`min-h-screen flex flex-col items-center justify-center p-4 md:p-12 ${scene.textColor} transition-colors duration-700 overflow-hidden brick-texture`}
+      className={`relative min-h-screen flex flex-col items-center justify-center p-4 md:p-12 ${scene.textColor} transition-colors duration-700 overflow-hidden brick-texture`}
     >
       <div className="absolute inset-0 vignette z-10 pointer-events-none" />
 
