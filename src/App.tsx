@@ -315,10 +315,10 @@ function Scene({ scene }: { scene: (typeof scenes)[number] }) {
 
 export default function App() {
   return (
-    <main className="bg-black relative min-h-screen">
+    <main className="bg-[#0a0a0a] relative min-h-screen overflow-x-hidden">
       <div className="grain" />
       {scenes.map((scene) => (
-        <div key={scene.id} className={`sticky top-0 ${scene.bg}`}>
+        <div key={scene.id} className={`sticky top-0 ${scene.bg} relative min-h-screen`}>
           <Scene scene={scene} />
         </div>
       ))}
