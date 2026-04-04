@@ -1,6 +1,5 @@
 {
-  "name": "concrete_beats",
-  "homepage": "https://RyanrealAF.github.io/concrete_beats",
+  "name": "react-example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -33,9 +32,5 @@
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RyanrealAF/concrete_beats.git"
   }
 }
