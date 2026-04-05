@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Truck, Waves, Trash2, Sun, Moon, Package, Heart, MapPin } from "lucide-react";
+import { Truck, Waves, Trash2, Sun, Moon, Package, Heart, MapPin, Volume2, VolumeX } from "lucide-react";
 
 const scenes = [
   {
@@ -353,9 +353,24 @@ function Scene({ scene }: { scene: (typeof scenes)[number] }) {
 }
 
 export default function App() {
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleMute = () => {
+    const audio = document.getElementById("background-audio") as HTMLAudioElement;
+    if (audio) {
+      audio.muted = !audio.muted;
+      setIsMuted(audio.muted);
+    }
+  };
+
   return (
     <main className="bg-[#0a0a0a] relative min-h-screen overflow-x-hidden">
       <div className="grain" />
+      <div className="fixed top-4 right-4 z-50">
+        <button onClick={toggleMute} className="p-2 bg-black rounded-full text-white">
+          {isMuted ? <VolumeX /> : <Volume2 />}
+        </button>
+      </div>
       {scenes.map((scene) => (
         <div key={scene.id} className={`sticky top-0 ${scene.bg} relative min-h-screen`}>
           <Scene scene={scene} />
