@@ -358,6 +358,9 @@ export default function App() {
   const toggleMute = () => {
     const audio = document.getElementById("background-audio") as HTMLAudioElement;
     if (audio) {
+      if (audio.paused) {
+        audio.play().catch(e => console.error("Audio play failed:", e));
+      }
       audio.muted = !audio.muted;
       setIsMuted(audio.muted);
     }
