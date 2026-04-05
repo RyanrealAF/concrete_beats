@@ -3,5 +3,5 @@ main = "src/index.js"
 compatibility_date = "2024-01-01"
 
 [[routes]]
-pattern = "buildwhilebleeding.com/app*"
+pattern = "buildwhilebleeding.com/concrete-rhythm*"
 zone_name = "buildwhilebleeding.com"
