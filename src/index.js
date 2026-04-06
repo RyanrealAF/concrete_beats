@@ -1,13 +1,11 @@
-// ENTRY POINT: Proxies buildwhilebleeding.com/concrete-rhythm* → Pages app
-const PAGES_ORIGIN = "https://concrete-beats.pages.dev";
+// ENTRY POINT: Proxies buildwhilebleeding.com/* → Pages app
+const PAGES_ORIGIN = "https://concrete-beats.buildwhilebleeding.com";
 
 export default {
   async fetch(request) {
     const url = new URL(request.url);
 
-    // Strip /concrete-rhythm prefix before forwarding
-    const strippedPath = url.pathname.replace(/^\/concrete-rhythm/, "") || "/";
-    const targetURL = new URL(strippedPath + url.search, PAGES_ORIGIN);
+    const targetURL = new URL(url.pathname + url.search, PAGES_ORIGIN);
 
     const proxied = new Request(targetURL, {
       method: request.method,
